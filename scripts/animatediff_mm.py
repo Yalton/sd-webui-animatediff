@@ -175,7 +175,7 @@ class AnimateDiffMM:
         alphas = 1.0 - betas
         alphas_cumprod = torch.cumprod(alphas, dim=0)
         self.prev_alpha_cumprod = sd_model.alphas_cumprod
-        self.prev_alpha_cumprod_original = sd_model.alphas_cumprod_original
+        self.prev_alpha_cumprod_original = sd_model.alphas_cumprod_prev
         sd_model.alphas_cumprod = alphas_cumprod
         sd_model.alphas_cumprod_original = alphas_cumprod
     
